@@ -27,6 +27,24 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 		);
 
 		$this->add_control (
+			'closed_accordion_color', [
+				'label' => __( 'Closed Accordion Color', 'elementor-contacts-accordion-widget' ),
+				'default' => '#4388ffff',
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [ '{{WRAPPER}} .accordion-contacts-container' => 'background-color: {{VALUE}};', ],
+			]
+		);
+
+		$this->add_control (
+			'opened_accordion_color', [
+				'label' => __( 'Opened Accordion Color', 'elementor-contacts-accordion-widget' ),
+				'default' => '#b0cdffff',
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [ '{{WRAPPER}} .accordion-contacts-container:has(#second-row.active)' => 'background-color: {{VALUE}};', ],
+			]
+		);
+
+		$this->add_control (
 			'company_title_alignment', [
 				'label' => __( 'Title Alignment', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
@@ -198,7 +216,7 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 		);
 
 		$this->add_control (
-			'company_adress_alignment', [
+			'company_schedule_alignment', [
 				'label' => __( 'Adress Alignment', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
 				'type' => Controls_Manager::CHOOSE,
@@ -222,7 +240,7 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 				],
 				'default' => 'left',
 				'toggle' => false,
-				'selectors' => [ '{{WRAPPER}} .company-adress' => 'text-align: {{VALUE}};', ],
+				'selectors' => [ '{{WRAPPER}} .company-schedule' => 'text-align: {{VALUE}};', ],
 			]
 		);
 
@@ -313,7 +331,7 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 
 		<div class="accordion-widget-container">
 			<?php foreach ( $settings['list'] as $index => $item ) : ?>
-				<div class="accordion-contacts-container <?php echo $item['company_title']; ?>">
+				<div class="accordion-contacts-container">
 					<div class="first-row">
 						<div class="company-names-container">
 							<p class="company-title">	
@@ -333,8 +351,28 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 						</div>
 						<div class="info-buttons-container">
 							<a>	WhatsApp </a>
-							<button>More info</button>
+							<button class="more-info-btn">More info</button>
 						</div>
+					</div>
+					<div id="second-row">
+						<div class="staff-card-container">
+							<div class="staff-img-container">
+								<img class="staff-img" src="assets/images/europe.svg">
+							</div>
+							<div class="staff-info-container">
+								<div class="staff-name-container">
+									<p>
+										John Johnson
+									</p>
+								</div>
+								<div class="staff-number-container">
+									<button class="staff-button">+523452354</button>
+								</div>
+								<div class="staff-email-container">
+									<button class="staff-button">rsfjnjgg@wef.com</button>
+								</div>
+            	</div>
+          	</div>
 					</div>
 				</div>
 			<?php endforeach; ?>
