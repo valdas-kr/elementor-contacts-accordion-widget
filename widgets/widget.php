@@ -97,8 +97,33 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 					'unit' => 'px',
 					'size' => 16,
 				],
-				'selectors' => [ '{{WRAPPER}} .company-title' => 'font-size: {{SIZE}}px;', ],
+				'selectors' => [ '{{WRAPPER}} .company-title' => 'font-size: {{SIZE}}{{UNIT}};', ],
 			]
+		);
+
+		$this->add_control (
+			'company_title_weight', [
+				'label' => __( 'Title Weight', 'elementor-contacts-accordion-widget' ),
+				'label_block' => true,
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'lighter' => [
+						'title' => __( 'Lighter', 'elementor-contacts-accordion-widget' ),
+						'icon' => 'eicon-arrow-left',
+					],
+					'normal' => [
+						'title' => __( 'Normal', 'elementor-contacts-accordion-widget' ),
+						'icon' => 'eicon-editor-bold',
+					],
+					'bold' => [
+						'title' => __( 'Bold', 'elementor-contacts-accordion-widget' ),
+						'icon' => 'eicon-arrow-right',
+					],
+				],
+				'default' => 'left',
+				'toggle' => false,
+				'selectors' => [ '{{WRAPPER}} .company-title' => 'font-weight: {{VALUE}};', ],				
+			],
 		);
 
 		$this->add_control (
@@ -302,12 +327,32 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 						'placeholder' => __( 'Company Description', 'elementor-contacts-accordion-widget' ),
 					],
 					[
+						'name' => 'company_adress_icon',
+						'label' => __( 'Company Adress Icon', 'elementor-contacts-accordion-widget' ),
+						'label_block' => true,
+						'type' => Controls_Manager::ICONS,
+						'default' => [
+							'value' => 'fas fa-map',
+							'library' => 'fa-solid',
+						],
+					],
+					[
 						'name' => 'company_adress',
 						'label' => __( 'Company Adress', 'elementor-contacts-accordion-widget' ),
 						'type' => Controls_Manager::TEXT,
 						'label_block' => true,
 						'default' => 'My Company Adress',
 						'placeholder' => __( 'Enter Company Adress', 'elementor-contacts-accordion-widget' ),
+					],
+					[
+						'name' => 'company_schedule_icon',
+						'label' => __( 'Company Schedule Icon', 'elementor-contacts-accordion-widget' ),
+						'label_block' => true,
+						'type' => Controls_Manager::ICONS,
+						'default' => [
+							'value' => 'fas fa-business-time',
+							'library' => 'fa-solid',
+						],
 					],
 					[
 						'name' => 'company_schedule',
@@ -342,10 +387,12 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 							</p>
 						</div>
 						<div class="company-locations-container">
-							<p class="company-adress">	
+							<p class="company-adress">
+								<?php Icons_Manager::render_icon( $item['company_adress_icon'], ['aria-hidden' => 'true'] ); ?>
 								<?php echo $item['company_adress']; ?>
 							</p>
 							<p class="company-schedule">
+								<?php Icons_Manager::render_icon( $item['company_schedule_icon'], ['aria-hidden' => 'true'] ); ?>
 								<?php echo $item['company_schedule']; ?>
 							</p>
 						</div>
