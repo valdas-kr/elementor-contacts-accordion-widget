@@ -21,7 +21,7 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
   protected function register_controls() {
 		$this->start_controls_section(
 			'section_content', [
-				'label' => __( 'General Settings', 'elementor-contacts-accordion-widget' ),
+				'label' => __( 'Contact General Settings', 'elementor-contacts-accordion-widget' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -379,7 +379,7 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 
 		$this->start_controls_section(
 			'staff_content', [
-				'label' => __( 'Staff Settings', 'elementor-contacts-accordion-widget' ),
+				'label' => __( 'Staff', 'elementor-contacts-accordion-widget' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -450,6 +450,166 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 			]
 		);
 		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'staff_settings_content', [
+				'label' => __( 'Staff General Settings', 'elementor-contacts-accordion-widget' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control (
+			'staff_container_color', [
+				'label' => __( 'Staff Container Color', 'elementor-contacts-accordion-widget' ),
+				'default' => '#b0cdffff',
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [ '{{WRAPPER}} .staff-card-container' => 'background-color: {{VALUE}};', ],
+			]
+		);
+
+		$this->add_control (
+			'staff_name_color', [
+				'label' => __( 'Staff Name Color', 'elementor-contacts-accordion-widget' ),
+				'default' => '#1D2430',
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [ '{{WRAPPER}} .staff-name-container' => 'color: {{VALUE}};', ],
+			]
+		);
+
+		$this->add_control (
+			'staff_name_size', [
+				'label' => __( 'Staff Name Size', 'elementor-contacts-accordion-widget' ),
+				'label_block' => true,
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 8,
+						'max' => 32,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 16,
+				],
+				'selectors' => [ '{{WRAPPER}} .staff-name-container' => 'font-size: {{SIZE}}{{UNIT}};', ],
+			]
+		);
+
+		$this->add_control (
+			'staff_name_weight', [
+				'label' => __( 'Staff Name Weight', 'elementor-contacts-accordion-widget' ),
+				'label_block' => true,
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'lighter' => [
+						'title' => __( 'Lighter', 'elementor-contacts-accordion-widget' ),
+						'icon' => 'eicon-arrow-left',
+					],
+					'normal' => [
+						'title' => __( 'Normal', 'elementor-contacts-accordion-widget' ),
+						'icon' => 'eicon-editor-bold',
+					],
+					'bold' => [
+						'title' => __( 'Bold', 'elementor-contacts-accordion-widget' ),
+						'icon' => 'eicon-arrow-right',
+					],
+				],
+				'default' => 'left',
+				'toggle' => false,
+				'selectors' => [ '{{WRAPPER}} .staff-name-container' => 'font-weight: {{VALUE}};', ],				
+			],
+		);
+
+		$this->add_control (
+			'staff_position_color', [
+				'label' => __( 'Staff Position Color', 'elementor-contacts-accordion-widget' ),
+				'default' => '#1D2430',
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [ '{{WRAPPER}} .staff-position-container' => 'color: {{VALUE}};', ],
+			]
+		);
+
+		$this->add_control (
+			'staff_position_size', [
+				'label' => __( 'Staff Position Size', 'elementor-contacts-accordion-widget' ),
+				'label_block' => true,
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 8,
+						'max' => 32,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 16,
+				],
+				'selectors' => [ '{{WRAPPER}} .staff-position-container' => 'font-size: {{SIZE}}px;', ],
+			]
+		);
+
+		$this->add_control (
+			'staff_position_weight', [
+				'label' => __( 'Staff Position Weight', 'elementor-contacts-accordion-widget' ),
+				'label_block' => true,
+				'type' => Controls_Manager::CHOOSE,
+				'options' => [
+					'lighter' => [
+						'title' => __( 'Lighter', 'elementor-contacts-accordion-widget' ),
+						'icon' => 'eicon-arrow-left',
+					],
+					'normal' => [
+						'title' => __( 'Normal', 'elementor-contacts-accordion-widget' ),
+						'icon' => 'eicon-editor-bold',
+					],
+					'bold' => [
+						'title' => __( 'Bold', 'elementor-contacts-accordion-widget' ),
+						'icon' => 'eicon-arrow-right',
+					],
+				],
+				'default' => 'left',
+				'toggle' => false,
+				'selectors' => [ '{{WRAPPER}} .staff-position-container' => 'font-weight: {{VALUE}};', ],				
+			],
+		);
+
+		$this->add_control (
+			'staff_button_font_color', [
+				'label' => __( 'Button Font Color', 'elementor-contacts-accordion-widget' ),
+				'default' => '#1D2430',
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [ '{{WRAPPER}} .staff-button' => 'font-color: {{VALUE}};', ],
+			]
+		);
+
+		$this->add_control (
+			'staff_button_font_size', [
+				'label' => __( 'Button Text Size', 'elementor-contacts-accordion-widget' ),
+				'label_block' => true,
+				'type' => Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 8,
+						'max' => 32,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 16,
+				],
+				'selectors' => [ '{{WRAPPER}} .staff-button' => 'font-size: {{SIZE}}px;', ],
+			]
+		);
+
+		$this->add_control (
+			'staff_button_color', [
+				'label' => __( 'Button Color', 'elementor-contacts-accordion-widget' ),
+				'default' => '#fafcffff',
+				'type' => Controls_Manager::COLOR,
+				'selectors' => [ '{{WRAPPER}} .staff-button' => 'background-color: {{VALUE}};', ],
+			]
+		);
+		$this->end_controls_section();
 	}
 
   protected function render() { 
@@ -501,10 +661,16 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 											<p><?php echo $staff['staff_position']; ?></p>
 										</div>
 										<div class="staff-number-container">
-											<button class="staff-button"><?php echo $staff['staff_number']; ?></button>
+											<a href="tel:<?php echo $staff['staff_number']; ?>">
+												<button class="staff-button">
+												<?php echo $staff['staff_number']; ?></button>
+											</a>
 										</div>
 										<div class="staff-email-container">
-											<button class="staff-button"><?php echo $staff['staff_email']; ?></button>
+											<a href="mailto:<?php echo $staff['staff_email']; ?>">
+												<button class="staff-button">
+												<?php echo $staff['staff_email']; ?></button>
+											</a>
 										</div>
 									</div>
 								</div>
