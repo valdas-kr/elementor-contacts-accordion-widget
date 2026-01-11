@@ -362,8 +362,91 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 						'default' => 'I-V: 8:00 - 17:00, VI-VII: -',
 						'placeholder' => __( 'Company Schedule', 'elementor-contacts-accordion-widget' ),
 					],
+					[
+						'name' => 'company_id',
+						'label' => __( 'company id', 'elementor-contacts-accordion-widget' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'label_block' => true,
+						'default' => 'company id',
+						'placeholder' => __( 'company id', 'elementor-contacts-accordion-widget' ),
+					],
 				],
 				'title_field' => '{{{ company_title }}}',
+			]
+		);
+		$this->end_controls_section();
+
+		$this->start_controls_section(
+			'staff_content', [
+				'label' => __( 'Staff Settings', 'elementor-contacts-accordion-widget' ),
+				'tab' => Controls_Manager::TAB_CONTENT,
+			]
+		);
+
+		$this->add_control (
+			'staff_list', [
+				'label' => __( 'Staff', 'elementor-contacts-accordion-widget' ),
+				'type' => Controls_Manager::REPEATER,
+				'fields' => [
+					[
+						'name' => 'company_id',
+						'label' => __( 'company id', 'elementor-contacts-accordion-widget' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'label_block' => true,
+						'default' => 'company id',
+						'placeholder' => __( 'company id', 'elementor-contacts-accordion-widget' ),
+					],
+					[
+						'name' => 'staff_name',
+						'label' => __( 'Staff Name', 'elementor-contacts-accordion-widget' ),
+						'type' => Controls_Manager::TEXT,
+						'label_block' => true,
+						'default' => 'My Staff Name',
+						'placeholder' => __( 'Enter Staff Name', 'elementor-contacts-accordion-widget' ),
+					],
+					[
+						'name' => 'staff_image',
+						'label' => __( 'Choose Image', 'elementor-vector-map-plugin' ),
+						'label_block' => true,
+						'type' => Controls_Manager::MEDIA,
+						'default' => [ 'url' => Utils::get_placeholder_image_src() ],
+					],
+					[
+						'name' => 'staff_image_description',
+						'label' => __( 'Image description', 'elementor-vector-map-plugin' ),
+						'label_block' => true,
+						'type' => Controls_Manager::TEXT,
+						'default' => 'Staff image',
+						'placeholder' => __( 'Image description', 'elementor-vector-map-plugin' ),
+					],
+					[
+						'name' => 'staff_position',
+						'label' => __( 'Staff Position', 'elementor-contacts-accordion-widget' ),
+						'type' => Controls_Manager::TEXT,
+						'label_block' => true,
+						'default' => 'My Staff Position',
+						'placeholder' => __( 'Enter Staff Position', 'elementor-contacts-accordion-widget' ),
+					],
+					[
+						'name' => 'staff_number',
+						'label' => __( 'Staff Number', 'elementor-contacts-accordion-widget' ),
+						'type' => Controls_Manager::TEXT,
+						'label_block' => true,
+						'default' => 'My Number Position',
+						'placeholder' => __( 'Enter Staff Number', 'elementor-contacts-accordion-widget' ),
+					],
+					[
+						'name' => 'staff_email',
+						'label' => __( 'Staff Email', 'elementor-contacts-accordion-widget' ),
+						'type' => Controls_Manager::TEXT,
+						'label_block' => true,
+						'default' => 'My Email Position',
+						'placeholder' => __( 'Enter Staff Email', 'elementor-contacts-accordion-widget' ),
+					],
+				],
+				'title_field' => '{{{ staff_name }}}',
 			]
 		);
 		$this->end_controls_section();
@@ -375,25 +458,25 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 		?>
 
 		<div class="accordion-widget-container">
-			<?php foreach ( $settings['list'] as $index => $item ) : ?>
+			<?php foreach ( $settings['list'] as $index => $company ) : ?>
 				<div class="accordion-contacts-container">
 					<div class="first-row">
 						<div class="company-names-container">
 							<p class="company-title">	
-								<?php echo $item['company_title']; ?>
+								<?php echo $company['company_title']; ?>
 							</p>
 							<p class="company-description">
-								<?php echo $item['company_description']; ?>
+								<?php echo $company['company_description']; ?>
 							</p>
 						</div>
 						<div class="company-locations-container">
 							<p class="company-adress">
-								<?php Icons_Manager::render_icon( $item['company_adress_icon'], ['aria-hidden' => 'true'] ); ?>
-								<?php echo $item['company_adress']; ?>
+								<?php Icons_Manager::render_icon( $company['company_adress_icon'], ['aria-hidden' => 'true'] ); ?>
+								<?php echo $company['company_adress']; ?>
 							</p>
 							<p class="company-schedule">
-								<?php Icons_Manager::render_icon( $item['company_schedule_icon'], ['aria-hidden' => 'true'] ); ?>
-								<?php echo $item['company_schedule']; ?>
+								<?php Icons_Manager::render_icon( $company['company_schedule_icon'], ['aria-hidden' => 'true'] ); ?>
+								<?php echo $company['company_schedule']; ?>
 							</p>
 						</div>
 						<div class="info-buttons-container">
@@ -402,24 +485,31 @@ class Elementor_Contacts_Accordion_Widget extends Widget_Base {
 						</div>
 					</div>
 					<div id="second-row">
-						<div class="staff-card-container">
-							<div class="staff-img-container">
-								<img class="staff-img" src="assets/images/europe.svg">
-							</div>
-							<div class="staff-info-container">
-								<div class="staff-name-container">
-									<p>
-										John Johnson
-									</p>
+						<?php foreach ( $settings['staff_list'] as $index => $staff ) : ?>
+							<?php	if ($staff['company_id'] == $company['company_id']) { ?>
+								<div class="staff-card-container">
+									<div class="staff-img-container">
+										<img src="<?php echo esc_url($staff['staff_image']['url'] )?>"
+										alt="<?php echo ($staff['staff_image_description'] )?>"
+										class="staff-img"/>
+									</div>
+									<div class="staff-info-container">
+										<div class="staff-name-container">
+											<p><?php echo $staff['staff_name']; ?></p>
+										</div>
+										<div class="staff-position-container">
+											<p><?php echo $staff['staff_position']; ?></p>
+										</div>
+										<div class="staff-number-container">
+											<button class="staff-button"><?php echo $staff['staff_number']; ?></button>
+										</div>
+										<div class="staff-email-container">
+											<button class="staff-button"><?php echo $staff['staff_email']; ?></button>
+										</div>
+									</div>
 								</div>
-								<div class="staff-number-container">
-									<button class="staff-button">+523452354</button>
-								</div>
-								<div class="staff-email-container">
-									<button class="staff-button">rsfjnjgg@wef.com</button>
-								</div>
-            	</div>
-          	</div>
+							<?php } ?>
+						<?php endforeach; ?>
 					</div>
 				</div>
 			<?php endforeach; ?>
