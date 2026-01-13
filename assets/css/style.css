@@ -1,10 +1,9 @@
-.accordion-widget-container, .accordion-contacts-container, .company-names-container, 
-.company-locations-container, .staff-img-container, .staff-info-container {
+.accordion-contacts-container, .company-info-container, .staff-img-container, .staff-info-container {
   display: flex; flex-direction: column;
 }
 
-.first-row, #second-row.active, .company-description, .staff-card-container, 
-.expand-accordion-btn, .company_social_btn, .info-buttons-container, .staff-button {
+.first-row, #second-row.active, .company-description, .staff-card-container, .expand-accordion-btn, 
+.company-social-btn, .info-buttons-container, .staff-button {
   display: flex; flex-direction: row;
 }
 
@@ -16,9 +15,7 @@
   transition: background-color 0.5s linear, color 0.5s linear, height 2s linear;
 }
 
-.first-row, .accordion-contacts-container, .company-names-container, .company-locations-container {
-  justify-content: space-between;
-}
+.first-row, .accordion-contacts-container, .company-info-container { justify-content: space-between; }
 
 .first-row:hover { cursor: pointer; }
 
@@ -39,7 +36,7 @@ p {
 
 .accordion-contacts-container:has(#second-row.active) {	box-shadow: 0px 0px 8px lightgray; }
 
-.company-names-container, .company-locations-container { width: 35%; row-gap: 8px; }
+.company-info-container { width: 35%; row-gap: 8px; }
 
 .company-description { column-gap: 8px; font-size: 18px; }
 
@@ -50,19 +47,16 @@ p {
   align-items: center;
 }
 
-.company_social_btn {
+.company-social-btn {
   align-items: center;
   column-gap: 8px;
   border-radius: 8px;
-  background-color: rgb(64, 176, 64);
   font-size: 16px;
   color: white;
   padding: 4px 16px;
   width: 150px;
   justify-content: center;
 }
-
-.company_social_btn:hover { background-color: rgb(40, 130, 40); }
 
 .expand-accordion-btn {
   width: 34px;
@@ -83,10 +77,10 @@ p {
   border-radius: 16px;
   border: 1px solid rgb(211, 211, 211);
   column-gap: 16px;
-  box-shadow: 0px 0px 8px lightgray;
+  box-shadow: 0px 0px 10px #cdcdcd;
 }
 
-.staff-img-container { width: 27%; justify-content: start; }
+.staff-img-container { width: 20%; justify-content: start; }
 
 .staff-position-container { font-weight: lighter; }
 
@@ -113,11 +107,7 @@ p {
 
 .company-description svg { width: 18px; height: 18px; }
 
-.company_social_btn svg {
-  width: 16px;
-  height: 16px;
-  fill: white;
-}
+.company-social-btn svg { width: 16px; height: 16px; fill: white; }
 
 .staff-languages {
   background-color: azure;
