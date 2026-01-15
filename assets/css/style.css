@@ -1,7 +1,5 @@
-.accordion-contacts-container, .company-info-container, .staff-img-container,
-.staff-description-container, .staff-info-container {
-  display: flex; flex-direction: column;
-}
+.accordion-contacts-container, .company-info-container, .staff-img-container, 
+.staff-description-container, .staff-info-container { display: flex; flex-direction: column; }
 
 .first-row, #second-row.active, .company-description, .staff-card-container, .expand-accordion-btn, 
 .company-social-btn, .info-buttons-container, .staff-button, .staff-text-container, .staff-languages-container {

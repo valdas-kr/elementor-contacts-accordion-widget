@@ -1,16 +1,12 @@
 <?php
-if (!defined ('ABSPATH')) { exit; }
-
-use Elementor\Controls_Manager;
-use Elementor\Repeater;
-use Elementor\Icons_Manager;
+if ( ! defined ( 'ABSPATH' )) { exit; }
 
 class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
   public function get_name(): string { return 'Contacts Accordion'; }
   public function get_title(): string { return esc_html__( 'Contacts Accordion', 'elementor-contacts-accordion-widget' ); }
   public function get_icon(): string { return 'eicon-contact'; }
-  public function get_categories(): array { return ['layout']; }
-  public function get_keywords(): array { return ['card', 'contacts', 'accordion']; }
+  public function get_categories(): array { return [ 'layout']; }
+  public function get_keywords(): array { return [ 'card', 'contacts', 'accordion']; }
 	public function get_custom_help_url(): string { return 'https://github.com/valdas-kr'; }
 	public function has_widget_inner_wrapper(): bool { return false; }
 	protected function is_dynamic_content(): bool { return false; }
@@ -19,68 +15,67 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 		$this->start_controls_section(
 			'company_content', [
 				'label' => esc_html__( 'Companies', 'elementor-contacts-accordion-widget' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
+				'tab' => Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control (
 			'company_repeater', [
-				'label' => esc_html__( 'Company list', 'elementor-contacts-accordion-widget' ),
-				'type' => Controls_Manager::REPEATER,
+				'type' => Elementor\Controls_Manager::REPEATER,
 				'fields' => [
 					[
 						'name' => 'company_title',
-						'label' => esc_html__( 'Company Title', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::TEXT,
+						'label' => esc_html__( 'Title', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::TEXT,
 						'label_block' => true,
-						'default' => esc_html__( 'My Company Title', 'elementor-contacts-accordion-widget' ),
-						'placeholder' => esc_html__( 'Enter Company Title', 'elementor-contacts-accordion-widget' ),
+						'default' => esc_html__( 'Title', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Title', 'elementor-contacts-accordion-widget' ),
 					],
 					[
 						'name' => 'company_id',
-						'label' => esc_html__( 'Company Employee Id', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::NUMBER,
+						'label' => esc_html__( 'Company id', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::NUMBER,
 						'min' => -100,
 						'max' => 100,
 						'step' => 1,
 						'default' => 0,
-						'placeholder' => esc_html__( 'Company and Employee Id must match', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Company and employee id must match', 'elementor-contacts-accordion-widget' ),
 					],
 					[
 						'name' => 'company_description',
-						'label' => esc_html__( 'Company Description', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::TEXT,
+						'label' => esc_html__( 'Description', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::TEXT,
 						'label_block' => true,
-						'default' => esc_html__( 'My Company Description', 'elementor-contacts-accordion-widget' ),
-						'placeholder' => esc_html__( 'Enter Company Description', 'elementor-contacts-accordion-widget' ),
+						'default' => esc_html__( 'Description', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Description', 'elementor-contacts-accordion-widget' ),
 					],
 					[
 						'name' => 'company_adress',
-						'label' => esc_html__( 'Company Adress', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::TEXT,
+						'label' => esc_html__( 'Adress', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::TEXT,
 						'label_block' => true,
-						'default' => esc_html__( 'My Company Adress', 'elementor-contacts-accordion-widget' ),
-						'placeholder' => esc_html__( 'Enter Company Adress', 'elementor-contacts-accordion-widget' ),
+						'default' => esc_html__( 'Adress', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Adress', 'elementor-contacts-accordion-widget' ),
 					],
 					[
 						'name' => 'company_schedule',
-						'label' => esc_html__( 'Company Schedule', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::TEXT,
+						'label' => esc_html__( 'Schedule', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::TEXT,
 						'label_block' => true,
 						'default' => esc_html__( 'I-V: 8:00 - 17:00, VI-VII: -', 'elementor-contacts-accordion-widget' ),
-						'placeholder' => esc_html__( 'Enter Company Schedule', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Schedule', 'elementor-contacts-accordion-widget' ),
 					],
 					[
 						'name' => 'company_social_media',
-						'label' => esc_html__( 'Company Social Media Type', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::TEXT,
+						'label' => esc_html__( 'Social media type', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::TEXT,
 						'label_block' => true,
 						'default' => esc_html__( 'WhatsApp', 'elementor-contacts-accordion-widget' ),
-						'placeholder' => esc_html__( 'Enter Company Social Media Type', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Social media type', 'elementor-contacts-accordion-widget' ),
 					],
 					[
-						'name' => 'company_social_media_link',
-						'label' => esc_html__( 'Company Social Media Link', 'elementor-contacts-accordion-widget' ),
+						'name' => 'company_link',
+						'label' => esc_html__( 'Social media link', 'elementor-contacts-accordion-widget' ),
 						'type' => \Elementor\Controls_Manager::URL,
 						'label_block' => true,
 						'placeholder' => esc_html__( 'https://www.google.com', 'elementor-contacts-accordion-widget' ),
@@ -98,75 +93,74 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 		$this->start_controls_section(
 			'employee_content', [
 				'label' => esc_html__( 'Employees', 'elementor-contacts-accordion-widget' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
+				'tab' => Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control (
 			'employee_repeater', [
-				'label' => esc_html__( 'Employee list', 'elementor-contacts-accordion-widget' ),
-				'type' => Controls_Manager::REPEATER,
+				'type' => Elementor\Controls_Manager::REPEATER,
 				'fields' => [
 					[
 						'name' => 'employee_name',
-						'label' => esc_html__( 'Employee Name', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::TEXT,
+						'label' => esc_html__( 'Name', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::TEXT,
 						'label_block' => true,
-						'default' => esc_html__( 'My Employee Name', 'elementor-contacts-accordion-widget' ),
-						'placeholder' => esc_html__( 'Enter Employee Name', 'elementor-contacts-accordion-widget' ),
+						'default' => esc_html__( 'Name', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Name', 'elementor-contacts-accordion-widget' ),
 					],
 					[
 						'name' => 'company_id',
-						'label' => esc_html__( 'Company Employee Id', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::NUMBER,
+						'label' => esc_html__( 'Company id', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::NUMBER,
 						'min' => -100,
 						'max' => 100,
 						'step' => 1,
 						'default' => 0,
-						'placeholder' => esc_html__( 'Company and Employee Id must match', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Company and employee id must match', 'elementor-contacts-accordion-widget' ),
 					],
 					[
 						'name' => 'employee_image',
-						'label' => esc_html__( 'Employee Image', 'elementor-contacts-accordion-widget' ),
+						'label' => esc_html__( 'Image', 'elementor-contacts-accordion-widget' ),
 						'label_block' => true,
-						'type' => Controls_Manager::MEDIA,
+						'type' => Elementor\Controls_Manager::MEDIA,
 						'default' => [ 'url' => Elementor\Utils::get_placeholder_image_src() ],
 					],
 					[
 						'name' => 'employee_image_description',
-						'label' => esc_html__( 'Employee Image description', 'elementor-contacts-accordion-widget' ),
+						'label' => esc_html__( 'Image description', 'elementor-contacts-accordion-widget' ),
 						'label_block' => true,
-						'type' => Controls_Manager::TEXT,
-						'default' => esc_html__( 'Employee image Description', 'elementor-contacts-accordion-widget' ),
-						'placeholder' => esc_html__( 'Enter Employee Image description', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::TEXT,
+						'default' => esc_html__( 'Employee image description', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Employee image description', 'elementor-contacts-accordion-widget' ),
 					],
 					[
 						'name' => 'staff_position',
-						'label' => esc_html__( 'Employee Position', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::TEXT,
+						'label' => esc_html__( 'Work position', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::TEXT,
 						'label_block' => true,
-						'default' => esc_html__( 'My Employee Position', 'elementor-contacts-accordion-widget' ),
-						'placeholder' => esc_html__( 'Enter Employee Position', 'elementor-contacts-accordion-widget' ),
+						'default' => esc_html__( 'Work position', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Work position', 'elementor-contacts-accordion-widget' ),
 					],
 					[
-						'name' => 'employee_phone_number',
-						'label' => esc_html__( 'Employee Phone Number', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::TEXT,
+						'name' => 'employee_phone',
+						'label' => esc_html__( 'Phone', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::TEXT,
 						'label_block' => true,
-						'default' => esc_html__( 'My Employee Phone Number', 'elementor-contacts-accordion-widget' ),
-						'placeholder' => esc_html__( 'Enter Employee Phone Number', 'elementor-contacts-accordion-widget' ),
+						'default' => esc_html__( 'Phone', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Phone', 'elementor-contacts-accordion-widget' ),
 					],
 					[
 						'name' => 'employee_email',
-						'label' => esc_html__( 'Employee Email', 'elementor-contacts-accordion-widget' ),
-						'type' => Controls_Manager::TEXT,
+						'label' => esc_html__( 'Email', 'elementor-contacts-accordion-widget' ),
+						'type' => Elementor\Controls_Manager::TEXT,
 						'label_block' => true,
-						'default' => esc_html__( 'My Employee Email', 'elementor-contacts-accordion-widget' ),
-						'placeholder' => esc_html__( 'Enter Employee Email', 'elementor-contacts-accordion-widget' ),
+						'default' => esc_html__( 'Email', 'elementor-contacts-accordion-widget' ),
+						'placeholder' => esc_html__( 'Email', 'elementor-contacts-accordion-widget' ),
 					],
 					[
 						'name' => 'employee_languages',
-						'label' => esc_html__( 'Select Employee Languages', 'elementor-contacts-accordion-widget' ),
+						'label' => esc_html__( 'Languages', 'elementor-contacts-accordion-widget' ),
 						'type' => \Elementor\Controls_Manager::SELECT2,
 						'label_block' => true,
 						'multiple' => true,
@@ -192,70 +186,64 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 
 		$this->start_controls_section(
 			'company_settings', [
-				'label' => esc_html__( 'Company Settings', 'elementor-contacts-accordion-widget' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
+				'label' => esc_html__( 'Company settings', 'elementor-contacts-accordion-widget' ),
+				'tab' => Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control (
 			'closed_accordion_color', [
-				'label' => __( 'Closed Accordion Color', 'elementor-contacts-accordion-widget' ),
+				'label' => __( 'Closed accordion color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#a8c8ffff',
-				'type' => Controls_Manager::COLOR,
+				'type' => Elementor\Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .accordion-contacts-container' => 'background-color: {{VALUE}};', ],
 			]
 		);
 
 		$this->add_control (
 			'opened_accordion_color', [
-				'label' => esc_html__( 'Opened Accordion Color', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Opened accordion color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#d8e5faff',
-				'type' => Controls_Manager::COLOR,
+				'type' => Elementor\Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .accordion-contacts-container:has(#second-row.active)' => 'background-color: {{VALUE}};', ],
 			]
 		);
 
 		$this->add_control (
 			'company_title_color', [
-				'label' => esc_html__( 'Company Title Text Color', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Company title color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
-				'type' => Controls_Manager::COLOR,
+				'type' => Elementor\Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .company-title' => 'color: {{VALUE}};', ],
 			]
 		);
 
 			$this->add_control (
 			'company_description_color', [
-				'label' => esc_html__( 'Company Description Text Color', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Company description color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [ '{{WRAPPER}} .company-description' => 'color: {{VALUE}};', ],
-			]
-		);
-
-		$this->add_control (
-			'company_description_icons_color', [
-				'label' => __( 'Company Description Icons Color', 'elementor-contacts-accordion-widget' ),
-				'default' => '#26292dff',
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [ '{{WRAPPER}} .company-description svg' => 'fill: {{VALUE}};', ],
+				'type' => Elementor\Controls_Manager::COLOR,
+				'selectors' => [ 
+					'{{WRAPPER}} .company-description' => 'color: {{VALUE}};', 
+					'{{WRAPPER}} .company-description svg' => 'fill: {{VALUE}};',
+				],
 			]
 		);
 
 		$this->add_control (
 			'socials_button_color', [
-				'label' => esc_html__( 'Social Media Button Color', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Social media button color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#227e22ff',
-				'type' => Controls_Manager::COLOR,
+				'type' => Elementor\Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .company-social-btn' => 'background-color: {{VALUE}};', ],
 			]
 		);
 
 		$this->add_control (
 			'company_title_weight', [
-				'label' => esc_html__( 'Company Title Text Weight', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Company title style', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
-				'type' => Controls_Manager::CHOOSE,
+				'type' => Elementor\Controls_Manager::CHOOSE,
 				'options' => [
 					'lighter' => [
 						'title' => esc_html__( 'Lighter', 'elementor-contacts-accordion-widget' ),
@@ -278,9 +266,9 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 
 		$this->add_control (
 			'company_title_alignment', [
-				'label' => esc_html__( 'Company Title Text Alignment', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Company title alignment', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
-				'type' => Controls_Manager::CHOOSE,
+				'type' => Elementor\Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'elementor-contacts-accordion-widget' ),
@@ -303,9 +291,9 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 
 		$this->add_control (
 			'company_description_alignment', [
-				'label' => esc_html__( 'Company Description Text Alignment', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Company description alignment', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
-				'type' => Controls_Manager::CHOOSE,
+				'type' => Elementor\Controls_Manager::CHOOSE,
 				'options' => [
 					'left' => [
 						'title' => esc_html__( 'Left', 'elementor-contacts-accordion-widget' ),
@@ -328,9 +316,9 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 
 		$this->add_control (
 			'company_title_size', [
-				'label' => esc_html__( 'Company Title Text Size', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Company title size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
-				'type' => Controls_Manager::SLIDER,
+				'type' => Elementor\Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
 						'min' => 8,
@@ -347,9 +335,9 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 
 		$this->add_control (
 			'company_social_media_icon', [
-				'label' => esc_html__( 'Company Social Media Link Icon', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Social media icon', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
-				'type' => Controls_Manager::ICONS,
+				'type' => Elementor\Controls_Manager::ICONS,
 				'default' => [
 					'value' => 'fab fa-whatsapp',
 					'library' => 'fa-brands',
@@ -361,60 +349,63 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 		$this->start_controls_section(
 			'employee_settings', [
 				'label' => esc_html__( 'Employee Settings', 'elementor-contacts-accordion-widget' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
+				'tab' => Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
 
 		$this->add_control (
 			'employee_container_color', [
-				'label' => esc_html__( 'Employee Container Color', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Employee containers color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#a8c8ffff',
-				'type' => Controls_Manager::COLOR,
+				'type' => Elementor\Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .staff-card-container' => 'background-color: {{VALUE}};', ],
 			]
 		);
 
 		$this->add_control (
 			'employee_name_color', [
-				'label' => esc_html__( 'Employee Name Text Color', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Employee name color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
-				'type' => Controls_Manager::COLOR,
+				'type' => Elementor\Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .staff-name-container' => 'color: {{VALUE}};', ],
 			]
 		);
 
 		$this->add_control (
 			'employee_position_color', [
-				'label' => esc_html__( 'Employee Position Text Color', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Employee position color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
-				'type' => Controls_Manager::COLOR,
+				'type' => Elementor\Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .staff-position-container' => 'color: {{VALUE}};', ],
 			]
 		);
 
 		$this->add_control (
 			'employee_btn_text_color', [
-				'label' => esc_html__( 'Employee Button Text Color', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Employee button text color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [ '{{WRAPPER}} .staff-button' => 'color: {{VALUE}};', ],
+				'type' => Elementor\Controls_Manager::COLOR,
+				'selectors' => [ 
+					'{{WRAPPER}} .staff-button' => 'color: {{VALUE}};',
+					'{{WRAPPER}} .staff-button svg' => 'fill: {{VALUE}};',
+				],
 			]
 		);
 
 		$this->add_control (
 			'employee_button_color', [
-				'label' => esc_html__( 'Employee Button Color', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Employee button color', 'elementor-contacts-accordion-widget' ),
 				'default' => 'azure',
-				'type' => Controls_Manager::COLOR,
+				'type' => Elementor\Controls_Manager::COLOR,
 				'selectors' => [ '{{WRAPPER}} .staff-button' => 'background-color: {{VALUE}};', ],
 			]
 		);
 
 		$this->add_control (
 			'employee_name_weight', [
-				'label' => esc_html__( 'Employee Name Text Weight', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Employee name style', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
-				'type' => Controls_Manager::CHOOSE,
+				'type' => Elementor\Controls_Manager::CHOOSE,
 				'options' => [
 					'lighter' => [
 						'title' => esc_html__( 'Lighter', 'elementor-contacts-accordion-widget' ),
@@ -437,9 +428,9 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 
 		$this->add_control (
 			'employee_name_size', [
-				'label' => esc_html__( 'Employee Name Text Size', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Employee name size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
-				'type' => Controls_Manager::SLIDER,
+				'type' => Elementor\Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
 						'min' => 8,
@@ -456,9 +447,9 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 
 		$this->add_control (
 			'employee_position_size', [
-				'label' => esc_html__( 'Employee Position Text Size', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Employee position size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
-				'type' => Controls_Manager::SLIDER,
+				'type' => Elementor\Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
 						'min' => 8,
@@ -475,9 +466,9 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 
 		$this->add_control (
 			'employee_btn_text_size', [
-				'label' => esc_html__( 'Employee Button Text Size', 'elementor-contacts-accordion-widget' ),
+				'label' => esc_html__( 'Employee button text size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
-				'type' => Controls_Manager::SLIDER,
+				'type' => Elementor\Controls_Manager::SLIDER,
 				'range' => [
 					'px' => [
 						'min' => 8,
@@ -507,17 +498,17 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 					</div>
 					<div class="company-info-container">
 						<p class="company-description">
-							<?php Icons_Manager::render_icon( ['value' => 'fas fa-map',	'library' => 'fa-solid',], ['aria-hidden' => 'true'] ); ?>
+							<?php Elementor\Icons_Manager::render_icon( ['value' => 'fas fa-map',	'library' => 'fa-solid',], ['aria-hidden' => 'true'] ); ?>
 							<?php echo $company['company_adress']; ?>
 						</p>
 						<p class="company-description">
-							<?php Icons_Manager::render_icon( [ 'value' => 'fas fa-business-time','library' => 'fa-solid',], ['aria-hidden' => 'true'] ); ?>
+							<?php Elementor\Icons_Manager::render_icon( [ 'value' => 'fas fa-business-time','library' => 'fa-solid',], ['aria-hidden' => 'true'] ); ?>
 							<?php echo $company['company_schedule']; ?>
 						</p>
 					</div>
 					<div class="info-buttons-container">
-						<a href="<?php echo $company['company_social_media_link']['url']; ?>">
-							<button class="company-social-btn"><?php Icons_Manager::render_icon( $company['company_social_media_icon'], ['aria-hidden' => 'true'] ); ?> <?php echo $company['company_social_media']; ?></button>
+						<a href="<?php echo $company['company_link']['url']; ?>">
+							<button class="company-social-btn"><?php Elementor\Icons_Manager::render_icon( $settings['company_social_media_icon'], ['aria-hidden' => 'true'] ); ?> <?php echo $company['company_social_media']; ?></button>
 						</a>
 						<button class="expand-accordion-btn"><</button>
 					</div>
@@ -545,14 +536,14 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 											<?php endforeach; ?>
 										</div>
 									</div>
-									<a href="tel:<?php echo $staff['employee_phone_number']; ?>">
+									<a href="tel:<?php echo $staff['employee_phone']; ?>">
 										<button class="staff-button">
-										<?php Icons_Manager::render_icon( ['value' => 'fas fa-envelope', 'library' => 'fa-solid'], ['aria-hidden' => 'true'] ); ?>
-										<?php echo $staff['employee_phone_number']; ?></button>
+										<?php Elementor\Icons_Manager::render_icon( ['value' => 'fas fa-envelope', 'library' => 'fa-solid'], ['aria-hidden' => 'true'] ); ?>
+										<?php echo $staff['employee_phone']; ?></button>
 									</a>
 									<a href="mailto:<?php echo $staff['employee_email']; ?>">
 										<button class="staff-button">
-										<?php Icons_Manager::render_icon( ['value' => 'fas fa-comment',	'library' => 'fa-solid'], ['aria-hidden' => 'true'] ); ?>
+										<?php Elementor\Icons_Manager::render_icon( ['value' => 'fas fa-comment',	'library' => 'fa-solid'], ['aria-hidden' => 'true'] ); ?>
 										<?php echo $staff['employee_email']; ?></button>
 									</a>
 								</div>
