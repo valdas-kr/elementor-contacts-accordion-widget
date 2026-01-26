@@ -510,7 +510,9 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 						<a href="<?php echo $company['company_link']['url']; ?>">
 							<button class="company-social-btn"><?php Elementor\Icons_Manager::render_icon( $settings['company_social_media_icon'], ['aria-hidden' => 'true'] ); ?> <?php echo $company['company_social_media']; ?></button>
 						</a>
-						<button class="expand-accordion-btn"><</button>
+						<div class="expand-icon">
+							<p>></p>
+						</div>
 					</div>
 				</div>
 				<?php if ( $index == 0 ) : ?> <div id="second-row" class="active">

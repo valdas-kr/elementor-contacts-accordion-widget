@@ -1,7 +1,9 @@
 .accordion-contacts-container, .company-info-container, .staff-img-container, 
-.staff-description-container, .staff-info-container { display: flex; flex-direction: column; }
+.staff-description-container, .staff-info-container { 
+  display: flex; flex-direction: column; 
+}
 
-.first-row, #second-row.active, .company-description, .staff-card-container, .expand-accordion-btn, 
+.first-row, #second-row.active, .company-description, .staff-card-container, .expand-icon, 
 .company-social-btn, .info-buttons-container, .staff-button, .staff-text-container, .staff-languages-container {
   display: flex; flex-direction: row;
 }
@@ -29,18 +31,32 @@ p {
 
 .company-description { column-gap: 8px; font-size: 18px; }
 
-.expand-accordion-btn {
+.expand-icon {
   width: 34px;
   height: 34px;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   font-size: 16px;
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255)
+  color: #26292D;
+  background-color: rgb(250, 250, 250);
+  transition: 0.5s ease;
+  transform: rotate(270deg);
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid rgb(211, 211, 211);
 }
 
-.expand-accordion-btn:hover { background-color: rgb(240, 240, 240); color: rgb(0, 0, 0); }
+.expand-icon p { padding-bottom: 4px; }
+
+.accordion-contacts-container:has(#second-row.active) .expand-icon { transform: rotate(90deg); }
+
+.expand-icon:hover {
+  border: 1px solid rgb(146, 146, 146);
+  background-color: rgb(235, 235, 235);
+  color: black;
+}
 
 .staff-img-container { width: 20%; justify-content: start; }
 
@@ -61,14 +77,9 @@ p {
 
 .company-social-btn svg { width: 16px; height: 16px; fill: white; }
 
-.staff-text-container {
-  width: 100%;
-}
+.staff-text-container { width: 100%; }
 
-.staff-description-container {
-  width: 50%;
-  row-gap: 8px;
-}
+.staff-description-container { width: 50%; row-gap: 8px; }
 
 .company-info-container { width: 35%; row-gap: 8px; }
 
@@ -93,9 +104,7 @@ p {
   transition: 0.1s;
 }
 
-.company-social-btn:hover {
-  opacity: 1;
-}
+.company-social-btn:hover { opacity: 1; }
 
 .staff-card-container {
   width: 32%;
@@ -111,7 +120,7 @@ p {
   border-radius: 16px;
   padding: 16px;
   margin-top: 16px;
-  transition: background-color 0.5s linear, color 0.5s linear, height 2s linear;
+  transition: 0.5s linear, color 0.5s linear, 0.5s ease;
 }
 
 .staff-button { 
@@ -127,10 +136,7 @@ p {
   transition: 0.1s;
 }
 
-.staff-button:hover {
-  border: 1px solid rgb(180, 180, 180);
-  opacity: 1;
-}
+.staff-button:hover { border: 1px solid rgb(180, 180, 180); opacity: 1; }
 
 .staff-languages {
   background-color: azure;
