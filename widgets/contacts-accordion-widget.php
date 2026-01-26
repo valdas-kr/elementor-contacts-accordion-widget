@@ -235,7 +235,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 				'label' => esc_html__( 'Social media button color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#227e22ff',
 				'type' => Elementor\Controls_Manager::COLOR,
-				'selectors' => [ '{{WRAPPER}} .company-social-btn' => 'background-color: {{VALUE}};', ],
+				'selectors' => [ '{{WRAPPER}} .company-social-button' => 'background-color: {{VALUE}};', ],
 			]
 		);
 
@@ -265,56 +265,6 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 		);
 
 		$this->add_control (
-			'company_title_alignment', [
-				'label' => esc_html__( 'Company title alignment', 'elementor-contacts-accordion-widget' ),
-				'label_block' => true,
-				'type' => Elementor\Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => esc_html__( 'Left', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => esc_html__( 'Center', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => esc_html__( 'Right', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-right',
-					],
-				],
-				'default' => 'left',
-				'toggle' => false,
-				'selectors' => [ '{{WRAPPER}} .company-title' => 'text-align: {{VALUE}};', ],
-			]
-		);
-
-		$this->add_control (
-			'company_description_alignment', [
-				'label' => esc_html__( 'Company description alignment', 'elementor-contacts-accordion-widget' ),
-				'label_block' => true,
-				'type' => Elementor\Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
-						'title' => esc_html__( 'Left', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
-						'title' => esc_html__( 'Center', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
-						'title' => esc_html__( 'Right', 'elementor-contacts-accordion-widget' ),
-						'icon' => 'eicon-text-align-right',
-					],
-				],
-				'default' => 'left',
-				'toggle' => false,
-				'selectors' => [ '{{WRAPPER}} .company-description' => 'justify-content: {{VALUE}};', ],
-			]
-		);
-
-		$this->add_control (
 			'company_title_size', [
 				'label' => esc_html__( 'Company title size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
@@ -322,7 +272,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 				'range' => [
 					'px' => [
 						'min' => 8,
-						'max' => 26,
+						'max' => 32,
 					],
 				],
 				'default' => [
@@ -330,6 +280,25 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 					'size' => 18,
 				],
 				'selectors' => [ '{{WRAPPER}} .company-title' => 'font-size: {{SIZE}}{{UNIT}};', ],
+			]
+		);
+
+			$this->add_control (
+			'company_description_size', [
+				'label' => esc_html__( 'Company description size', 'elementor-contacts-accordion-widget' ),
+				'label_block' => true,
+				'type' => Elementor\Controls_Manager::SLIDER,
+				'range' => [
+					'px' => [
+						'min' => 8,
+						'max' => 28,
+					],
+				],
+				'default' => [
+					'unit' => 'px',
+					'size' => 18,
+				],
+				'selectors' => [ '{{WRAPPER}} .company-description' => 'font-size: {{SIZE}}{{UNIT}};', ],
 			]
 		);
 
@@ -381,7 +350,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 		);
 
 		$this->add_control (
-			'employee_btn_text_color', [
+			'employee_button_text_color', [
 				'label' => esc_html__( 'Employee button text color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
 				'type' => Elementor\Controls_Manager::COLOR,
@@ -420,7 +389,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 						'icon' => 'eicon-arrow-right',
 					],
 				],
-				'default' => 'left',
+				'default' => 'normal',
 				'toggle' => false,
 				'selectors' => [ '{{WRAPPER}} .staff-name-container' => 'font-weight: {{VALUE}};', ],				
 			],
@@ -434,7 +403,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 				'range' => [
 					'px' => [
 						'min' => 8,
-						'max' => 32,
+						'max' => 28,
 					],
 				],
 				'default' => [
@@ -453,7 +422,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 				'range' => [
 					'px' => [
 						'min' => 8,
-						'max' => 32,
+						'max' => 26,
 					],
 				],
 				'default' => [
@@ -465,7 +434,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 		);
 
 		$this->add_control (
-			'employee_btn_text_size', [
+			'employee_button_text_size', [
 				'label' => esc_html__( 'Employee button text size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
 				'type' => Elementor\Controls_Manager::SLIDER,
@@ -496,6 +465,9 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 						<p class="company-title">	<?php echo $company['company_title']; ?> </p>
 						<p class="company-description"> <?php echo $company['company_description']; ?> </p>
 					</div>
+					<div class="mobile-expand-icon">
+						<p>></p>
+					</div>
 					<div class="company-info-container">
 						<p class="company-description">
 							<?php Elementor\Icons_Manager::render_icon( ['value' => 'fas fa-map',	'library' => 'fa-solid',], ['aria-hidden' => 'true'] ); ?>
@@ -504,11 +476,11 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 						<p class="company-description">
 							<?php Elementor\Icons_Manager::render_icon( [ 'value' => 'fas fa-business-time','library' => 'fa-solid',], ['aria-hidden' => 'true'] ); ?>
 							<?php echo $company['company_schedule']; ?>
-						</p>
+						</p>						
 					</div>
 					<div class="info-buttons-container">
 						<a href="<?php echo $company['company_link']['url']; ?>">
-							<button class="company-social-btn"><?php Elementor\Icons_Manager::render_icon( $settings['company_social_media_icon'], ['aria-hidden' => 'true'] ); ?> <?php echo $company['company_social_media']; ?></button>
+							<button class="company-social-button"><?php Elementor\Icons_Manager::render_icon( $settings['company_social_media_icon'], ['aria-hidden' => 'true'] ); ?> <?php echo $company['company_social_media']; ?></button>
 						</a>
 						<div class="expand-icon">
 							<p>></p>
@@ -538,16 +510,18 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 											<?php endforeach; ?>
 										</div>
 									</div>
-									<a href="tel:<?php echo $staff['employee_phone']; ?>">
-										<button class="staff-button">
-										<?php Elementor\Icons_Manager::render_icon( ['value' => 'fas fa-envelope', 'library' => 'fa-solid'], ['aria-hidden' => 'true'] ); ?>
-										<?php echo $staff['employee_phone']; ?></button>
-									</a>
-									<a href="mailto:<?php echo $staff['employee_email']; ?>">
-										<button class="staff-button">
-										<?php Elementor\Icons_Manager::render_icon( ['value' => 'fas fa-comment',	'library' => 'fa-solid'], ['aria-hidden' => 'true'] ); ?>
-										<?php echo $staff['employee_email']; ?></button>
-									</a>
+									<div class="staff-button-container">
+										<a href="tel:<?php echo $staff['employee_phone']; ?>">
+											<button class="staff-button">
+											<?php Elementor\Icons_Manager::render_icon( ['value' => 'fas fa-envelope', 'library' => 'fa-solid'], ['aria-hidden' => 'true'] ); ?>
+											<?php echo $staff['employee_phone']; ?></button>
+										</a>
+										<a href="mailto:<?php echo $staff['employee_email']; ?>">
+											<button class="staff-button">
+											<?php Elementor\Icons_Manager::render_icon( ['value' => 'fas fa-comment',	'library' => 'fa-solid'], ['aria-hidden' => 'true'] ); ?>
+											<?php echo $staff['employee_email']; ?></button>
+										</a>
+									</div>
 								</div>
 							</div>
 						<?php } ?>
