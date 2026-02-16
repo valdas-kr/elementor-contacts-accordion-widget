@@ -1,18 +1,22 @@
 .accordion-contacts-container, .company-info-container, .staff-img-container, .staff-description-container, 
 .staff-info-container, .staff-button-container { 
-  display: flex; flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .first-row, #second-row.active, .company-description, .staff-card-container, .expand-icon, .mobile-expand-icon, 
 .company-social-button, .info-buttons-container, .staff-button, .staff-text-container, .staff-languages-container {
-  display: flex; flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .first-row, .accordion-contacts-container, .company-info-container, .staff-text-container, .staff-info-container { 
   justify-content: space-between;
 }
 
-.first-row:hover { cursor: pointer; }
+.first-row:hover {
+  cursor: pointer;
+}
 
 #second-row {
   display: none;
@@ -21,15 +25,19 @@
   padding-top: 32px;
 }
 
-p {
+.accordion-contacts-container p {
   margin: 0;
   line-height: 1;
   margin-block-end: 0 !important;
 }
 
-.accordion-contacts-container:has(#second-row.active) {	box-shadow: 0px 0px 8px lightgray; }
+.accordion-contacts-container:has(#second-row.active) {
+  box-shadow: 0px 0px 8px lightgray;
+}
 
-.company-description svg { align-self: center; }
+.company-description svg {
+  align-self: center;
+}
 
 .expand-icon, .mobile-expand-icon {
   width: 34px;
@@ -48,10 +56,17 @@ p {
   border: 1px solid rgb(211, 211, 211);
 }
 
-.expand-icon p, .mobile-expand-icon p { padding-bottom: 4px; }
+.expand-icon p, .mobile-expand-icon p {
+  padding-bottom: 4px;
+}
 
-.accordion-contacts-container:has(#second-row.active) .expand-icon { transform: rotate(270deg); }
-.accordion-contacts-container:has(#second-row.active) .mobile-expand-icon { transform: rotate(270deg); }
+.accordion-contacts-container:has(#second-row.active) .expand-icon {
+  transform: rotate(270deg);
+}
+
+.accordion-contacts-container:has(#second-row.active) .mobile-expand-icon {
+  transform: rotate(270deg);
+}
 
 .expand-icon:hover, .mobile-expand-icon {
   border: 1px solid rgb(146, 146, 146);
@@ -59,7 +74,9 @@ p {
   color: black;
 }
 
-.mobile-expand-icon { display: none; }
+.mobile-expand-icon {
+  display: none;
+}
 
 .staff-img-container {
   width: 64px;
@@ -67,7 +84,9 @@ p {
   justify-content: start;
 }
 
-.staff-position-container { font-weight: lighter; }
+.staff-position-container {
+  font-weight: lighter;
+}
 
 .staff-img {
   width: 64px !important;
@@ -83,7 +102,9 @@ p {
   height: 100%;
 }
 
-.staff-button-container { row-gap: 16px; }
+.staff-button-container {
+  row-gap: 16px;
+}
 
 .staff-button svg {
   width: 13px;
@@ -102,7 +123,9 @@ p {
   fill: white;
 }
 
-.staff-description-container, .company-info-container { row-gap: 8px; }
+.staff-description-container, .company-info-container {
+  row-gap: 8px;
+}
 
 .info-buttons-container {
   column-gap: 16px;
@@ -122,7 +145,9 @@ p {
   transition: 0.1s;
 }
 
-.company-social-button:hover, .staff-button:hover { opacity: 1; }
+.company-social-button:hover, .staff-button:hover {
+  opacity: 1;
+}
 
 .staff-card-container {
   width: 32.45%;
@@ -154,7 +179,9 @@ p {
   transition: 0.1s;
 }
 
-.staff-button:hover { border: 1px solid rgb(180, 180, 180); }
+.staff-button:hover {
+  border: 1px solid rgb(180, 180, 180);
+}
 
 .staff-languages {
   background-color: azure;
@@ -164,7 +191,9 @@ p {
   text-align: center;
 }
 
-.staff-languages-container, .staff-button, .company-description, .company-social-button { column-gap: 8px; }
+.staff-languages-container, .staff-button, .company-description, .company-social-button {
+  column-gap: 8px;
+}
 
 .staff-text-container, .first-row {
   flex-wrap: wrap;
@@ -172,28 +201,44 @@ p {
 }
 
 @media (max-width: 1425px) {
-  .staff-card-container { width: 49%; }
+  .staff-card-container {
+    width: 49%;
+  }
 }
 
 @media (max-width: 1025px) {
-  .company-info-container { width: 80%; }
+  .company-info-container {
+    width: 80%;
+  }
 
-  .info-buttons-container { width: 100%; }
+  .info-buttons-container {
+    width: 100%;
+  }
 
-  .info-buttons-container a { width: 100%; }
+  .info-buttons-container a {
+    width: 100%;
+  }
 
   .company-social-button {
     width: 100%;
     height: 45px;
   }
 
-  .staff-card-container { width: 100%; }
+  .staff-card-container {
+    width: 100%;
+  }
 
-  .staff-button { height: 40px; }
+  .staff-button {
+    height: 40px;
+  }
 
-  .staff-text-container, .staff-card-container { flex-wrap: wrap; }
+  .staff-text-container, .staff-card-container {
+    flex-wrap: wrap;
+  }
 
-  .expand-icon { display: none; }
+  .expand-icon {
+    display: none;
+  }
 
   .mobile-expand-icon {
     display: flex;

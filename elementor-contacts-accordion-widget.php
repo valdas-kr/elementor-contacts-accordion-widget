@@ -19,8 +19,8 @@ function register_contacts_accordion_widget( $widgets_manager ) {
 add_action( 'elementor/widgets/register', 'register_contacts_accordion_widget' );
 
 function load_contacts_accordion_widget_assets() {
-  wp_enqueue_style( 'style', plugin_dir_url( __FILE__ ) . 'assets/css/style.css' );
-  wp_enqueue_script( 'script', plugin_dir_url( __FILE__ ) . 'assets/js/script.js', [], false, true );
+  wp_enqueue_style( 'contacts-accordion-style', plugin_dir_url( __FILE__ ) . 'assets/css/contacts-accordion-style.css' );
+  wp_enqueue_script( 'contacts-accordion-script', plugin_dir_url( __FILE__ ) . 'assets/js/contacts-accordion-script.js', [], false, true );
 }
 add_action( 'wp_enqueue_scripts', 'load_contacts_accordion_widget_assets' );
 ?>

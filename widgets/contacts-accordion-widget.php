@@ -258,7 +258,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 						'icon' => 'eicon-arrow-right',
 					],
 				],
-				'default' => 'left',
+				'default' => 'normal',
 				'toggle' => false,
 				'selectors' => [ '{{WRAPPER}} .company-title' => 'font-weight: {{VALUE}};', ],				
 			],
