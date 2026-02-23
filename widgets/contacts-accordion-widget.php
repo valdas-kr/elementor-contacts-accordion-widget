@@ -19,7 +19,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'company_repeater', [
 				'type' => Elementor\Controls_Manager::REPEATER,
 				'fields' => [
@@ -97,7 +97,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'employee_repeater', [
 				'type' => Elementor\Controls_Manager::REPEATER,
 				'fields' => [
@@ -191,7 +191,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'closed_accordion_color', [
 				'label' => __( 'Closed accordion color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#a8c8ffff',
@@ -200,7 +200,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'opened_accordion_color', [
 				'label' => esc_html__( 'Opened accordion color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#d8e5faff',
@@ -209,7 +209,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'company_title_color', [
 				'label' => esc_html__( 'Company title color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
@@ -218,7 +218,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-			$this->add_control (
+		$this->add_control(
 			'company_description_color', [
 				'label' => esc_html__( 'Company description color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
@@ -230,7 +230,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'socials_button_color', [
 				'label' => esc_html__( 'Social media button color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#227e22ff',
@@ -239,7 +239,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'company_title_weight', [
 				'label' => esc_html__( 'Company title style', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
@@ -264,7 +264,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			],
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'company_title_size', [
 				'label' => esc_html__( 'Company title size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
@@ -283,7 +283,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-			$this->add_control (
+		$this->add_control(
 			'company_description_size', [
 				'label' => esc_html__( 'Company description size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
@@ -302,7 +302,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'company_social_media_icon', [
 				'label' => esc_html__( 'Social media icon', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
@@ -322,7 +322,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'employee_container_color', [
 				'label' => esc_html__( 'Employee containers color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#a8c8ffff',
@@ -331,7 +331,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'employee_name_color', [
 				'label' => esc_html__( 'Employee name color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
@@ -340,7 +340,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'employee_position_color', [
 				'label' => esc_html__( 'Employee position color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
@@ -349,7 +349,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'employee_button_text_color', [
 				'label' => esc_html__( 'Employee button text color', 'elementor-contacts-accordion-widget' ),
 				'default' => '#26292dff',
@@ -361,7 +361,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'employee_button_color', [
 				'label' => esc_html__( 'Employee button color', 'elementor-contacts-accordion-widget' ),
 				'default' => 'azure',
@@ -370,7 +370,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'employee_name_weight', [
 				'label' => esc_html__( 'Employee name style', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
@@ -395,7 +395,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			],
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'employee_name_size', [
 				'label' => esc_html__( 'Employee name size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
@@ -414,7 +414,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'employee_position_size', [
 				'label' => esc_html__( 'Employee position size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,
@@ -433,7 +433,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
 			]
 		);
 
-		$this->add_control (
+		$this->add_control(
 			'employee_button_text_size', [
 				'label' => esc_html__( 'Employee button text size', 'elementor-contacts-accordion-widget' ),
 				'label_block' => true,

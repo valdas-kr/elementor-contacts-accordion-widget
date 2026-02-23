@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * Plugin Name: Elementor Contacts Accordion Widget
  * Description: Adds a repeater-based contacts accordion section to Elementor.
  * Version:     1.0
