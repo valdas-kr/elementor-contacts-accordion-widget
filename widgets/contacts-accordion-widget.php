@@ -7,7 +7,7 @@ class Elementor_Contacts_Accordion_Widget extends Elementor\Widget_Base {
   public function get_icon(): string { return 'eicon-contact'; }
   public function get_categories(): array { return [ 'layout']; }
   public function get_keywords(): array { return [ 'card', 'contacts', 'accordion']; }
-	public function get_custom_help_url(): string { return 'https://github.com/valdas-kr'; }
+	public function get_custom_help_url(): string { return 'https://github.com/valdas-k'; }
 	public function has_widget_inner_wrapper(): bool { return false; }
 	protected function is_dynamic_content(): bool { return false; }
 

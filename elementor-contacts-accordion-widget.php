@@ -4,7 +4,7 @@
  * Description: Adds a repeater-based contacts accordion section to Elementor.
  * Version:     1.0
  * Author:      Valdas Kriūnas
- * Author URI:  https://github.com/valdas-kr
+ * Author URI:  https://github.com/valdas-k
  * Text Domain: elementor-contacts-accordion-widget
  * Licence: GPLv3
  * Requires Plugins: elementor
